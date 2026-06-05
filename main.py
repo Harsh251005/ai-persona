@@ -1,76 +1,44 @@
-# main.py
-
-from src.rag.context_loader import ContextLoader
-from src.rag.chunker import ContextChunker
 from src.rag.embeddings import EmbeddingManager
 from src.rag.vector_store import VectorStoreManager
-from dotenv import load_dotenv
+from src.rag.retriever import PortfolioRetriever
+from src.rag.rag_service import RAGService
 
+from dotenv import load_dotenv
 load_dotenv()
 
 
-def main() -> None:
-    print("Loading documents...")
-
-    documents = ContextLoader(
-        context_dir="context_data"
-    ).load_all()
-
-    print(f"Loaded {len(documents)} documents")
-
-    print("Chunking documents...")
-
-    chunks = ContextChunker().chunk_documents(
-        documents
-    )
-
-    print(f"Created {len(chunks)} chunks")
-
-    print("Initializing embeddings...")
+def main():
 
     embedding_manager = EmbeddingManager()
 
-    print("Initializing vector store...")
-
     vector_store = VectorStoreManager(
         embedding_manager=embedding_manager,
-        collection_name="portfolio_rag",
-        db_path="./qdrant_db",
+    )
+
+    retriever = PortfolioRetriever(
+        vector_store=vector_store,
+    )
+
+    rag = RAGService(
+        retriever=retriever,
     )
 
     try:
-        print("Indexing chunks...")
 
-        vector_store.add_documents(
-            chunks
-        )
+        while True:
 
-        print(
-            f"Indexed {vector_store.count_documents()} chunks"
-        )
+            query = input("\nQuestion: ")
 
-        print("\nTesting retrieval...\n")
+            if query.lower() in {
+                "quit",
+                "exit",
+            }:
+                break
 
-        results = vector_store.similarity_search_with_score(
-            query="What is evidentai and show it's latest commits",
-            k=10,
-        )
+            answer = rag.answer(query)
 
-        for doc, score in results:
-            print(score)
-            print(doc.metadata)
-            print("-" * 150)
-            print(doc.page_content)
-            print("-" * 150)
-
-        from collections import Counter
-
-        counter = Counter()
-
-        for chunk in chunks:
-            counter[chunk.metadata["source_type"]] += 1
-
-        print(counter)
+            print("\nAnswer:")
+            print(answer)
 
     finally:
         vector_store.close()
