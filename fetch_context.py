@@ -4,7 +4,7 @@ import base64
 
 # --- Configuration ---
 USERNAME = "Harsh251005"
-REPOS = ["TruthLens-AI", "EvidentAI", "InsightForge", "stackforge-ai"]
+REPOS = ["TruthLens-AI", "Evident-AI"]
 OUTPUT_DIR = "context_data"
 
 # Ensure the output directory exists

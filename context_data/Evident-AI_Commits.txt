@@ -1,0 +1,32 @@
+--- Commit History for Evident-AI ---
+
+On 2026-06-05T07:05:47Z, Harsh made commit 39d96ce: Updated README.md
+On 2026-04-10T09:04:46Z, Harsh made commit 0e356e4: perf: migrate to FlashRank for faster CPU reranking  Replaced CrossEncoder with FlashRank to reduce latency. Maintained score thresholding and metadata consistency.
+On 2026-04-10T07:47:56Z, Harsh made commit 21daaa7: Merge branch 'main' of https://github.com/Harsh251005/Evident-AI
+On 2026-04-10T07:46:19Z, Harsh made commit 92875fc: Updated streamlit UI [skip ci]
+On 2026-04-10T07:42:55Z, Harsh made commit c6b1701: Added Dev Container Folder
+On 2026-04-10T07:38:07Z, Harsh made commit 132b926: fix(deploy): add nltk download [skip ci]
+On 2026-04-10T07:15:54Z, Harsh made commit 868c0e8: ci: optimize workflow and upgrade action versions  Removed duplicate install steps and upgraded checkout/setup-python actions to suppress Node.js deprecation warnings. Path filtering is now active for non-code files.
+On 2026-04-10T07:12:13Z, Harsh made commit 5f5855b: add path filtering to skip evals for non-code changes  added license
+On 2026-04-10T06:50:27Z, Harsh made commit cf2b40f: chore: force REST client and prepare for cloud deployment  Disabled gRPC to ensure compatibility across environments and bypass local DLL block. Verified logic passes 0.98 accuracy gate in CI/CD.
+On 2026-04-09T14:11:09Z, Harsh made commit 6be977d: Added ingest-only flag in warm-up ingestion
+On 2026-04-09T14:09:36Z, Harsh made commit dad78d9: feat: add CLI arguments and ingest-only flag to main.py  Implemented argparse to support dynamic file paths and an --ingest-only mode. This prevents the pipeline from hanging on the interactive query loop and failing with an EOFError during the warm-up ingestion step.
+On 2026-04-09T14:04:40Z, Harsh made commit 2b66390: Uploaded evaluation document
+On 2026-04-09T13:56:59Z, Harsh made commit c64bc03: ci: add warm-up ingestion to generate BM25 index in GitHub runner  Fixed ValueError where setup_bm25 could not find the .pkl file on the stateless runner. Also updated run_evals.py to resolve the collection name dynamically using generate_collection_name.
+On 2026-04-09T13:49:35Z, Harsh made commit 6f30800: fix(eval): pass collection_name to RAG system in run_evals
+On 2026-04-09T13:39:36Z, Harsh made commit f5762a8: Switched from local qdrant to cloud qdrant
+On 2026-04-09T10:30:06Z, Harsh made commit 7861f98: Added README.md documentation and fixed CI/CD Pipeline
+On 2026-04-09T10:10:08Z, Harsh made commit 7487900: chore: update project dependencies and prompt configurations
+On 2026-04-09T10:10:04Z, Harsh made commit 34dca0c: test: implement automated quality gate and golden dataset evaluation
+On 2026-04-09T10:10:00Z, Harsh made commit 51c3d2a: feat(ingestion): add dynamic PDF processing and hashed collection management
+On 2026-04-09T10:09:55Z, Harsh made commit 91a233c: feat(rag): implement hybrid search with BM25 and vector retrieval
+On 2026-04-09T10:04:58Z, Harsh made commit df7f25b: Switched reranker model for faster retrieval
+On 2026-04-09T10:04:10Z, Harsh made commit 02c52af: Fixed dataset answers name to ground_truth
+On 2026-04-09T10:03:31Z, Harsh made commit 1193b35: Added streamlit UI for interaction
+On 2026-04-07T15:18:26Z, Harsh made commit 8a2fbd5: Added streamlit UI, along with LLM as a judge evaluation and modular pipeline
+On 2026-04-07T15:17:06Z, Harsh made commit c9b47f2: Improvised prompt for better output quality
+On 2026-04-07T15:15:26Z, Harsh made commit 82d7b44: Persistent storage of bm25 data for quick retrieval
+On 2026-04-07T15:13:54Z, Harsh made commit 92054c8: Fixed retriever metadata retrieval
+On 2026-04-07T15:10:14Z, Harsh made commit 77c211e: Updated reranker from cohere to open source reranker
+On 2026-04-06T13:56:19Z, Harsh made commit 2ee0a71: Added reranker using cohere and hybrid search strategy using BM25
+On 2026-04-06T12:22:51Z, Harsh made commit 2dd1207: Added embeddings, qdrant vectordb, and retriever for question answering from claude's constitution

@@ -1,5 +1,6 @@
 --- Commit History for TruthLens-AI ---
 
+On 2026-06-05T06:50:57Z, Harsh made commit 581b0f3: Included README.md
 On 2026-03-27T01:37:43Z, Harsh made commit 56e93ad: model training file added in the models directory
 On 2026-03-24T15:20:45Z, Harsh made commit 4239140: TruthLensAI.apk Removed
 On 2026-03-24T15:18:59Z, Harsh made commit 5265927: README.md: Removed from frontend
@@ -29,4 +30,3 @@ On 2026-03-16T19:22:48Z, Harsh made commit 4439399: feat: leaderboard + score sa
 On 2026-03-16T18:38:32Z, Harsh made commit a41f614: feat: delete account + reset account
 On 2026-03-16T17:40:05Z, Harsh made commit da917c2: feat: email verification flow complete
 On 2026-03-16T17:22:19Z, Harsh made commit 512ec2e: feat: email verification on signup + login
-On 2026-03-16T16:37:13Z, Harsh made commit 75f5425: fix: use verified domain for password reset emails
