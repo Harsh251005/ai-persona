@@ -122,7 +122,9 @@ class ContextLoader:
 
         for file_path in sorted(self.context_dir.iterdir()):
 
-            source_id = self._generate_source_id(file_path)
+            source_id = self._generate_source_id(
+                file_path
+            )
 
             if file_path.suffix.lower() == ".pdf":
                 documents.extend(
@@ -148,4 +150,96 @@ class ContextLoader:
                     ).load()
                 )
 
+        documents.append(
+            self._create_project_summary_document(
+                documents
+            )
+        )
+
         return documents
+
+    def _extract_project_descriptions(
+            self,
+            documents: List[Document],
+    ) -> dict[str, str]:
+        """
+        Extract a concise project description from README documents.
+        """
+
+        descriptions = {}
+
+        for doc in documents:
+
+            if doc.metadata.get("source_type") != "readme":
+                continue
+
+            project_name = doc.metadata.get("project_name")
+
+            content = doc.page_content.strip()
+
+            lines = [
+                line.strip()
+                for line in content.splitlines()
+                if line.strip()
+            ]
+
+            description = ""
+
+            for line in lines:
+
+                if line.startswith("#"):
+                    continue
+
+                description = line
+                break
+
+            descriptions[project_name] = (
+                description[:300]
+                if description
+                else "Project information available in repository."
+            )
+
+        return descriptions
+
+    def _create_project_summary_document(
+            self,
+            documents: List[Document],
+    ) -> Document:
+        """
+        Creates a portfolio summary document to improve retrieval
+        for high-level questions about projects and experience.
+        """
+
+        project_descriptions = self._extract_project_descriptions(
+            documents
+        )
+
+        summary_lines = [
+            "Harsh has worked on the following projects:",
+            "",
+        ]
+
+        for project_name, description in sorted(
+                project_descriptions.items()
+        ):
+            summary_lines.append(
+                f"- {project_name}: {description}"
+            )
+
+        summary_lines.extend(
+            [
+                "",
+                "These projects demonstrate experience in AI engineering,",
+                "LLMs, RAG systems, evaluation frameworks, agentic workflows,",
+                "machine learning, and production-grade application development.",
+            ]
+        )
+
+        return Document(
+            page_content="\n".join(summary_lines),
+            metadata={
+                "source_id": "project_summary",
+                "source_type": "project_summary",
+                "file_name": "generated_project_summary",
+            },
+        )
