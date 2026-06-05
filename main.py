@@ -1,9 +1,15 @@
 from src.rag.context_loader import ContextLoader
+from src.rag.chunker import ContextChunker
 
-loader = ContextLoader(
-    context_dir="context_data"
+documents = ContextLoader(
+    "context_data"
+).load_all()
+
+chunker = ContextChunker()
+
+chunks = chunker.chunk_documents(
+    documents
 )
 
-documents = loader.load_all()
-
-print(f"Loaded {len(documents)} documents")
+print(f"Documents: {len(documents)}")
+print(f"Chunks: {len(chunks)}")
