@@ -1,0 +1,32 @@
+--- Commit History for TruthLens-AI ---
+
+On 2026-03-27T01:37:43Z, Harsh made commit 56e93ad: model training file added in the models directory
+On 2026-03-24T15:20:45Z, Harsh made commit 4239140: TruthLensAI.apk Removed
+On 2026-03-24T15:18:59Z, Harsh made commit 5265927: README.md: Removed from frontend
+On 2026-03-20T06:27:50Z, Harsh made commit 6cb9801: Fix: EXIF analysis result
+On 2026-03-20T06:05:10Z, Harsh made commit 8ca5cdd: Fix: same reset password bug
+On 2026-03-19T18:33:14Z, Harsh made commit 0cafe20: Fix: password warning
+On 2026-03-19T18:07:15Z, Harsh made commit 3788812: Fixed minor bug
+On 2026-03-19T17:52:42Z, Harsh made commit efa0ad5: Fix: verification, full name limit, password restriction, batch scan limit, identical reset password check
+On 2026-03-19T12:26:46Z, Harsh made commit f4ca6c2: fix: add huggingface-hub back to requirements (used in detector.py)
+On 2026-03-19T12:09:05Z, Harsh made commit eff80e6: Updated pyproject.toml dependencies
+On 2026-03-19T11:33:29Z, Harsh made commit 9e01b8b: Fixed news feed reload issue
+On 2026-03-19T11:02:46Z, Harsh made commit 63eab3e: Tutorial coach feature removed. Multi-category news feature added
+On 2026-03-19T10:40:37Z, Harsh made commit 599e1d5: feat: tutorial system, multi-category news feed, home coach marks
+On 2026-03-19T07:40:00Z, Harsh made commit 7afcc82: Fixed requirements version conflict
+On 2026-03-19T07:31:07Z, Harsh made commit ec49c50: Removed Grad-Cam Feature
+On 2026-03-18T19:04:57Z, Harsh made commit 227a72d: Fixed EXIF and GRAD-CAM
+On 2026-03-18T18:25:57Z, Harsh made commit f318778: Fix numpy version conflict with tensorflow and opencv-python-headless
+On 2026-03-18T18:21:22Z, Harsh made commit 7fbfece: Fix numpy version conflict with tensorflow
+On 2026-03-18T18:17:25Z, Harsh made commit 7e790cd: Add Grad-CAM, fix LLM prompts, fix EXIF for screenshots, remove on-device model
+On 2026-03-18T14:11:34Z, Harsh made commit bbe846a: Fixed critical backend bugs
+On 2026-03-18T12:40:57Z, Harsh made commit dee608f: Updated UI and fixed critical bugs
+On 2026-03-17T14:49:58Z, Harsh made commit 83a9d86: Fixed warnings in frontend
+On 2026-03-17T06:57:49Z, Harsh made commit 0aad969: feat: batch scan multiple images + background scanning + completion notification
+On 2026-03-16T20:41:44Z, Harsh made commit 5bafca2: feat: push notifications + leaderboard + awareness hub + email verification + delete/reset account
+On 2026-03-16T19:33:10Z, Harsh made commit cb3be23: fix: leaderboard best score only + quick actions layout
+On 2026-03-16T19:22:48Z, Harsh made commit 4439399: feat: leaderboard + score saving complete
+On 2026-03-16T18:38:32Z, Harsh made commit a41f614: feat: delete account + reset account
+On 2026-03-16T17:40:05Z, Harsh made commit da917c2: feat: email verification flow complete
+On 2026-03-16T17:22:19Z, Harsh made commit 512ec2e: feat: email verification on signup + login
+On 2026-03-16T16:37:13Z, Harsh made commit 75f5425: fix: use verified domain for password reset emails

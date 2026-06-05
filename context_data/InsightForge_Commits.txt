@@ -1,0 +1,14 @@
+--- Commit History for InsightForge ---
+
+On 2026-04-13T12:53:36Z, Harsh made commit 515c05e: Add README.md
+On 2026-04-13T11:17:34Z, Harsh made commit cdcbb90: Added caching, multi-download support, and fixed UI
+On 2026-04-13T10:27:51Z, Harsh made commit 47e49e1: Add research depth control (basic vs deep mode) with adaptive pipeline behaviour  Added logs for structured flow
+On 2026-04-13T10:23:08Z, Harsh made commit c0d388c: Polished UI for professionalism and structured layout
+On 2026-04-13T08:01:02Z, Harsh made commit dea0d64: Update LangGraph workflow to include ranking node
+On 2026-04-13T07:51:42Z, Harsh made commit fb9c2f4: Add parallel web search using ThreadPoolExecutor to reduce latency
+On 2026-04-13T07:47:42Z, Harsh made commit 8bf6281: Refactor pipeline into LangGraph workflow with modular nodes
+On 2026-04-13T07:37:58Z, Harsh made commit c160d74: Add result deduplication and LLM-based relevance filtering
+On 2026-04-13T07:30:57Z, Harsh made commit 3bb6f75: Add query decomposition for multi-step research
+On 2026-04-13T07:25:12Z, Harsh made commit 4face47: Add config management and externalize prompts using YAML
+On 2026-04-13T07:10:05Z, Harsh made commit 44ae6ab: Set up basic streamlit UI and added dependencies
+On 2026-04-13T07:04:26Z, Harsh made commit 7c6eeef: Initialized Project
