@@ -26,15 +26,13 @@ class RAGService:
     ):
         self.retriever = retriever
         self.model = model
-
         self.client = OpenAI()
 
     def answer(
-        self,
-        query: str,
-        k: int = 5,
-    ) -> str:
-
+            self,
+            query: str,
+            k: int = 5,
+    ) -> dict:
         documents = self.retriever.retrieve(
             query=query,
             k=k,
@@ -50,13 +48,17 @@ class RAGService:
             input=prompt,
         )
 
-        return response.output_text
+        return {
+            "answer": response.output_text,
+            "sources": documents,
+        }
 
     def answer_with_sources(
-            self,
-            query: str,
-            k: int = 5,
-    ):
+        self,
+        query: str,
+        k: int = 5,
+    ) -> dict:
+
         documents = self.retriever.retrieve(
             query=query,
             k=k,

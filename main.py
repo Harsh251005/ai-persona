@@ -2,7 +2,6 @@ from src.rag.embeddings import EmbeddingManager
 from src.rag.vector_store import VectorStoreManager
 from src.rag.retriever import PortfolioRetriever
 from src.rag.rag_service import RAGService
-
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -13,6 +12,8 @@ def main():
 
     vector_store = VectorStoreManager(
         embedding_manager=embedding_manager,
+        collection_name="portfolio_rag",
+        db_path="./qdrant_db",
     )
 
     retriever = PortfolioRetriever(
@@ -25,20 +26,30 @@ def main():
 
     try:
 
+        print("\nPortfolio RAG Ready")
+        print("Type 'exit' to quit.\n")
+
         while True:
 
-            query = input("\nQuestion: ")
+            query = input("Question: ").strip()
+
+            if not query:
+                continue
 
             if query.lower() in {
-                "quit",
                 "exit",
+                "quit",
             }:
                 break
 
-            answer = rag.answer(query)
+            answer = rag.answer(
+                query=query,
+                k=5,
+            )
 
             print("\nAnswer:")
             print(answer)
+            print()
 
     finally:
         vector_store.close()
