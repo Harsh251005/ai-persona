@@ -1,5 +1,5 @@
 from openai import OpenAI
-
+from langsmith import traceable
 from src.rag.prompt_builder import PromptBuilder
 from src.rag.retriever import PortfolioRetriever
 
@@ -28,6 +28,7 @@ class RAGService:
         self.model = model
         self.client = OpenAI()
 
+    @traceable(name="rag_answer")
     def answer(
             self,
             query: str,

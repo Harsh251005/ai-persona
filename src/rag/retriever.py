@@ -1,6 +1,7 @@
 from typing import List
 
 from langchain_core.documents import Document
+from langsmith import traceable
 
 from src.rag.vector_store import VectorStoreManager
 
@@ -16,6 +17,7 @@ class PortfolioRetriever:
     ):
         self.vector_store = vector_store
 
+    @traceable(name="retrieve_documents")
     def retrieve(
         self,
         query: str,
